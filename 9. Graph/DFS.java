@@ -48,7 +48,13 @@ public class DFS {
 
     }
 
-    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]){
+    
+
+
+
+    //basic dfs algo
+
+    /*public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]){
         System.out.print(curr + " ");
         vis[curr] = true;
 
@@ -56,6 +62,28 @@ public class DFS {
             Edge e = graph[curr].get(i);
             if(!vis[e.dst]){
                 dfs(graph, e.dst, vis);
+            }
+        }
+    }*/
+
+
+    //advance dfs algo
+
+    public static void dfs(ArrayList<Edge>[] graph){
+        boolean vis[] = new boolean[graph.length];
+        for(int i=0; i<graph.length; i++){
+            if(!vis[i]){dfsUtils(graph,i,vis);}
+        }
+    }
+
+    public static void dfsUtils(ArrayList<Edge>[] graph, int curr, boolean vis[]){
+        System.out.print(curr + " ");
+        vis[curr] = true;
+
+        for(int i=0; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if(!vis[e.dst]){
+                dfsUtils(graph, e.dst, vis);
             }
         }
     }
@@ -78,7 +106,8 @@ public class DFS {
         int V = 7;
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph);
-        dfs(graph, 0, new boolean[V]);
+        // dfs(graph, 0, new boolean[V]); 
+        dfs(graph);
 
 
     }
