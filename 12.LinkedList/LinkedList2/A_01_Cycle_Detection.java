@@ -64,6 +64,7 @@ public class A_01_Cycle_Detection {
         // ll.addFirst(2);
         // ll.addFirst(2);
         // ll.addFirst(4);
+         // ll.addFirst(4);
 
         head = new Node(1);
         head.next = new Node(2);
