@@ -17,7 +17,7 @@ public class A_03_PushAtBottom {
         s.push(2);
         s.push(3);
 
-        pushAtBottom(s, 4);+
+        pushAtBottom(s, 4);
         while (!s.empty()) {
             System.out.println(s.peek());
             s.pop();
