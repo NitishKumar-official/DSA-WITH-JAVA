@@ -13,7 +13,7 @@ public class A01Palindrome {
     }
 
     public static void main(String[] args) {
-        String str = "raacecar";
+        String str = "racecar";
         Boolean str1 = checkPalindrome(str);
         if (str1) {
             System.out.println("it is palindrome");
